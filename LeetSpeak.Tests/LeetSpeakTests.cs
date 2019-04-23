@@ -37,10 +37,17 @@ namespace LeetSpeak.Tests
             Assert.AreEqual("iz", testLeetSpeak.Translate("is"));
         }
         [TestMethod]
-        public void Translate_WordStartsWith_s_ReplacedWithz()
+        public void Translate_InputStartsWith_s_NotReplaced()
         {
             LeetSpeak testLeetSpeak = new LeetSpeak();
             Assert.AreEqual("s37", testLeetSpeak.Translate("set"));
         }
+        [TestMethod]
+        public void Translate_WordStartsWith_s_ReplacedWithz()
+        {
+            LeetSpeak testLeetSpeak = new LeetSpeak();
+            Assert.AreEqual("h3ll0 s0ng", testLeetSpeak.Translate("hello song"));
+        }
+
     }
 }

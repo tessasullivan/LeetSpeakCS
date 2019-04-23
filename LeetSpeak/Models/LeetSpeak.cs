@@ -19,6 +19,10 @@ namespace LeetSpeak
                 {
                     continue;
                 }
+                else if (i != 0 && inputArray[i-1] == ' ' && inputArray[i] == 's')
+                {
+                    continue;
+                }
                 else {
                     switch (inputArray[i])
                     {
