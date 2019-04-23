@@ -60,6 +60,12 @@ namespace LeetSpeak.Tests
             Assert.AreEqual("iz", testLeetSpeak.Translate("is"));
         }
         [TestMethod]
+        public void Translate_LetterProcessedNotAtBeginningOfWord_S_ReplacedWithz()
+        {
+            LeetSpeak testLeetSpeak = new LeetSpeak();
+            Assert.AreEqual("az", testLeetSpeak.Translate("aS"));
+        }
+        [TestMethod]
         public void Translate_InputStartsWith_s_NotReplaced()
         {
             LeetSpeak testLeetSpeak = new LeetSpeak();
