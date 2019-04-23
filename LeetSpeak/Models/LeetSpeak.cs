@@ -19,21 +19,23 @@ namespace LeetSpeak
                 {
                     continue;
                 }
-                else if (i != 0 && inputArray[i-1] == ' ' && inputArray[i] == 's')
+                // If beginning of a word starts with s, don't change it.  Verify that the character before s is not a letter or digit
+                else if (i != 0 && !(Char.IsLetter(inputArray[i-1]) || Char.IsDigit(inputArray[i-1])) && Char.ToLower(inputArray[i]) == 's')
                 {
                     continue;
                 }
+                else if (inputArray[i] == 'I')
+                {
+                    inputArray[i] = '1';
+                }
                 else {
-                    switch (inputArray[i])
+                    switch (Char.ToLower(inputArray[i]))
                     {
-                        case 'e':
+                        case 'e' :
                             inputArray[i] = '3';
                             break;
                         case 'o':
                             inputArray[i] = '0';
-                            break;
-                        case 'I':
-                            inputArray[i] = '1';
                             break;
                         case 't':
                             inputArray[i] = '7';
